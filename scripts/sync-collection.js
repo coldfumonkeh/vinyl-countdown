@@ -73,10 +73,12 @@ async function fetchCollectionItems() {
   return items
 }
 
-function normalizeFromBasicInformation(basic) {
+function normalizeFromCollectionItem(item) {
+  const basic = item.basic_information
   const artistsSort = (basic.artists || []).map(artist => artist.name).join(', ')
 
   return {
+    instanceId: item.instance_id || item.id,
     id: basic.id,
     title: basic.title,
     artists: basic.artists || [],
@@ -108,7 +110,7 @@ async function main() {
   }
 
   const collectionItems = await fetchCollectionItems()
-  const records = collectionItems.map(item => normalizeFromBasicInformation(item.basic_information))
+  const records = collectionItems.map(item => normalizeFromCollectionItem(item))
 
   if (includeTracklists) {
     let enrichedCount = 0

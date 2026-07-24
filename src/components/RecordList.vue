@@ -51,7 +51,11 @@
     <div v-else-if="error" class="alert alert-danger mt-4">{{ error }}</div>
 
     <div v-else class="row">
-      <div class="col-12" v-for="record in filteredRecords" :key="record.id">
+      <div
+        class="col-12"
+        v-for="(record, index) in filteredRecords"
+        :key="record.instanceId || `${record.id}-${index}`"
+      >
         <div class="card mb-2 mt-4">
           <div class="row g-0">
             <div class="col-4">
