@@ -59,10 +59,10 @@
         <div class="card mb-2 mt-4">
           <div class="row g-0">
             <div class="col-4">
-              <img
-                v-bind:src="record.thumb"
-                class="img-fluid rounded-start"
+              <RecordThumb
+                :src="record.thumb"
                 :alt="record.title"
+                img-class="img-fluid rounded-start"
               />
             </div>
             <div class="col-8">
@@ -106,8 +106,12 @@
 
 <script>
 import { loadCollection } from '@/services/collectionService'
+import RecordThumb from '@/components/RecordThumb.vue'
 
 export default {
+  components: {
+    RecordThumb
+  },
   data() {
     return {
       ascending: true,

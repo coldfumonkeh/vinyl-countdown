@@ -13,7 +13,7 @@
         <table class="table m-0">
           <tr>
             <td>
-              <img v-bind:src="record.thumb" :alt="record.title" />
+              <RecordThumb :src="record.thumb" :alt="record.title" />
               <br /><br />
               <a
                 class="btn btn-outline-primary"
@@ -95,8 +95,12 @@
 
 <script>
 import { loadCollection, getRecordById } from '@/services/collectionService'
+import RecordThumb from '@/components/RecordThumb.vue'
 
 export default {
+  components: {
+    RecordThumb
+  },
   data() {
     return {
       loading: false,
