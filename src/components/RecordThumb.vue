@@ -2,7 +2,7 @@
   <img
     :src="recordThumbUrl(src)"
     :alt="alt"
-    :class="imgClass"
+    :class="['record-thumb', `record-thumb--${variant}`, imgClass]"
     @error="onThumbError"
   />
 </template>
@@ -23,6 +23,10 @@ export default {
     imgClass: {
       type: String,
       default: ''
+    },
+    variant: {
+      type: String,
+      default: 'list'
     }
   },
   methods: {
@@ -31,3 +35,23 @@ export default {
   }
 }
 </script>
+
+<style scoped>
+.record-thumb {
+  display: block;
+  object-fit: cover;
+  aspect-ratio: 1 / 1;
+}
+
+.record-thumb--list {
+  width: 100%;
+  max-width: 150px;
+  height: auto;
+}
+
+.record-thumb--detail {
+  width: 100%;
+  max-width: 200px;
+  height: auto;
+}
+</style>

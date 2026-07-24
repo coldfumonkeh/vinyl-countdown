@@ -13,7 +13,11 @@
         <table class="table m-0">
           <tr>
             <td>
-              <RecordThumb :src="record.thumb" :alt="record.title" />
+              <RecordThumb
+                :src="record.thumb"
+                :alt="record.title"
+                variant="detail"
+              />
               <br /><br />
               <a
                 class="btn btn-outline-primary"

@@ -58,11 +58,12 @@
       >
         <div class="card mb-2 mt-4">
           <div class="row g-0">
-            <div class="col-4">
+            <div class="col-4 d-flex align-items-start">
               <RecordThumb
                 :src="record.thumb"
                 :alt="record.title"
-                img-class="img-fluid rounded-start"
+                variant="list"
+                img-class="rounded-start"
               />
             </div>
             <div class="col-8">
