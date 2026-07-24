@@ -27,13 +27,30 @@
             <td>
               <h2>{{ record.title }}</h2>
               <p>{{ record.artists_sort }}</p>
-              <p v-if="record.released_formatted"><small>Released: {{ record.released_formatted }}</small></p>
-              <p v-if="record.labels && record.labels.length"><small>Label: {{ record.labels[0].name }} - {{ record.labels[0].catno }}</small></p>
-              <span v-for="(genre, index) in record.genres" :key="'genre-' + index">
-                <span class="badge rounded-pill bg-info text-dark">{{ genre }}</span>&nbsp;
+              <p v-if="record.released_formatted">
+                <small>Released: {{ record.released_formatted }}</small>
+              </p>
+              <p v-if="record.labels && record.labels.length">
+                <small
+                  >Label: {{ record.labels[0].name }} -
+                  {{ record.labels[0].catno }}</small
+                >
+              </p>
+              <span
+                v-for="(genre, index) in record.genres"
+                :key="'genre-' + index"
+              >
+                <span class="badge rounded-pill bg-info text-dark">{{
+                  genre
+                }}</span
+                >&nbsp;
               </span>
-              <span v-for="(style, index) in record.styles" :key="'style-' + index">
-                <span class="badge rounded-pill bg-secondary">{{ style }}</span>&nbsp;
+              <span
+                v-for="(style, index) in record.styles"
+                :key="'style-' + index"
+              >
+                <span class="badge rounded-pill bg-secondary">{{ style }}</span
+                >&nbsp;
               </span>
             </td>
           </tr>
@@ -42,10 +59,20 @@
             <td>
               <ul class="list-group">
                 <span v-for="(track, index) in record.tracklist" :key="index">
-                  <li :class="[ track.type_ == 'heading' ? 'list-group-item list-group-item-secondary' : 'list-group-item list-group-item-light']">
+                  <li
+                    :class="[
+                      track.type_ == 'heading'
+                        ? 'list-group-item list-group-item-secondary'
+                        : 'list-group-item list-group-item-light'
+                    ]"
+                  >
                     <small>
-                      <span v-if="track.type_ == 'heading'">{{ track.title }}</span>
-                      <span v-else>{{ track.position }} - {{ track.title }}</span>
+                      <span v-if="track.type_ == 'heading'">{{
+                        track.title
+                      }}</span>
+                      <span v-else
+                        >{{ track.position }} - {{ track.title }}</span
+                      >
                     </small>
                   </li>
                 </span>
@@ -81,7 +108,7 @@ export default {
     this.fetchData()
   },
   watch: {
-    '$route': 'fetchData'
+    $route: 'fetchData'
   },
   methods: {
     async fetchData() {
