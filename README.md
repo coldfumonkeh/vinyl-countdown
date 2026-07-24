@@ -38,11 +38,12 @@ Production deploys run via GitHub Actions (`.github/workflows/sync-and-deploy.ym
 ### One-time GitHub setup
 
 1. Make the repository **public**
-2. Go to **Settings → Pages → Build and deployment** and set source to **GitHub Actions**
-3. Add custom domain `vinyl.mattgifford.co.uk` under **Settings → Pages → Custom domain**
-4. Add a DNS record at your domain provider:
+2. Go to **Settings → Pages → Build and deployment**
+3. Set **Source** to **GitHub Actions** (required — the workflow cannot deploy without this)
+4. Add custom domain `vinyl.mattgifford.co.uk` under **Custom domain**
+5. Add a DNS record at your domain provider:
    - **CNAME** `vinyl` → `coldfumonkeh.github.io`
-5. Enable **Enforce HTTPS** once DNS has propagated
+6. Enable **Enforce HTTPS** once DNS has propagated
 
 ### Required GitHub Secrets
 

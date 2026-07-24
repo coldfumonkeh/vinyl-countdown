@@ -9,20 +9,17 @@ permissions:
   contents: write
   pages: write
   id-token: write
+  administration: write
 
 concurrency:
   group: pages
   cancel-in-progress: false
 
 jobs:
-  sync-and-deploy:
+  build:
     runs-on: ubuntu-latest
     env:
       NODE_OPTIONS: --openssl-legacy-provider
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -30,7 +27,7 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '18'
+          node-version: '22'
           cache: yarn
 
       - name: Install dependencies
@@ -50,15 +47,13 @@ jobs:
 
       - name: Setup GitHub Pages
         uses: actions/configure-pages@v5
+        with:
+          enablement: true
 
       - name: Upload site artifact
         uses: actions/upload-pages-artifact@v3
         with:
           path: dist
-
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v4
 
       - name: Commit updated collection.json
         run: |
@@ -71,3 +66,14 @@ jobs:
             git commit -m "Sync collection from Discogs"
             git push
           fi
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
