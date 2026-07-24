@@ -5,10 +5,11 @@ const path = require('path')
 
 const DISCOGS_API = 'https://api.discogs.com'
 const USER_AGENT = 'VinylCountdown/1.0 +https://github.com/coldfumonkeh/vinyl-countdown'
-const REQUEST_DELAY_MS = 1100
+const REQUEST_DELAY_MS = 2000
+const MAX_RETRIES = 5
 
-const token = process.env.DISCOGS_TOKEN
-const username = process.env.DISCOGS_USERNAME || 'coldfumonkeh'
+const token = (process.env.DISCOGS_TOKEN || '').trim()
+const username = (process.env.DISCOGS_USERNAME || 'coldfumonkeh').trim()
 
 if (!token) {
   console.error('DISCOGS_TOKEN environment variable is required')
@@ -19,13 +20,27 @@ function sleep(ms) {
   return new Promise(resolve => setTimeout(resolve, ms))
 }
 
-async function discogsFetch(url) {
+async function discogsFetch(url, attempt = 1) {
   const response = await fetch(url, {
     headers: {
       Authorization: `Discogs token=${token}`,
       'User-Agent': USER_AGENT
     }
   })
+
+  if (response.status === 429 && attempt <= MAX_RETRIES) {
+    const retryAfter = Number.parseInt(response.headers.get('Retry-After') || '60', 10)
+    console.warn(`Rate limited. Waiting ${retryAfter}s before retry ${attempt}/${MAX_RETRIES}...`)
+    await sleep(retryAfter * 1000)
+    return discogsFetch(url, attempt + 1)
+  }
+
+  if (response.status >= 500 && attempt <= MAX_RETRIES) {
+    const backoff = attempt * 5
+    console.warn(`Server error ${response.status}. Retrying in ${backoff}s...`)
+    await sleep(backoff * 1000)
+    return discogsFetch(url, attempt + 1)
+  }
 
   if (!response.ok) {
     const body = await response.text()
@@ -35,8 +50,8 @@ async function discogsFetch(url) {
   return response.json()
 }
 
-async function fetchCollectionReleaseIds() {
-  const releaseIds = []
+async function fetchCollectionItems() {
+  const items = []
   let page = 1
   let pages = 1
 
@@ -44,12 +59,9 @@ async function fetchCollectionReleaseIds() {
     const url = `${DISCOGS_API}/users/${username}/collection/folders/0/releases?per_page=100&page=${page}`
     const data = await discogsFetch(url)
     pages = data.pagination.pages
+    items.push(...data.releases)
 
-    for (const item of data.releases) {
-      releaseIds.push(item.basic_information.id)
-    }
-
-    console.log(`Fetched collection page ${page}/${pages} (${releaseIds.length} releases so far)`)
+    console.log(`Fetched collection page ${page}/${pages} (${items.length} releases so far)`)
     page += 1
 
     if (page <= pages) {
@@ -57,7 +69,7 @@ async function fetchCollectionReleaseIds() {
     }
   }
 
-  return releaseIds
+  return items
 }
 
 function formatReleased(release) {
@@ -70,6 +82,23 @@ function formatReleased(release) {
   }
 
   return null
+}
+
+function normalizeFromBasicInformation(basic) {
+  const artistsSort = (basic.artists || []).map(artist => artist.name).join(', ')
+
+  return {
+    id: basic.id,
+    title: basic.title,
+    artists: basic.artists || [],
+    artists_sort: artistsSort,
+    thumb: basic.thumb,
+    genres: basic.genres || [],
+    labels: basic.labels || [],
+    tracklist: [],
+    released_formatted: basic.year ? String(basic.year) : null,
+    searchText: `${basic.title}${artistsSort}`.toLowerCase()
+  }
 }
 
 function normalizeRelease(release) {
@@ -98,16 +127,32 @@ async function fetchReleaseDetails(releaseId) {
 async function main() {
   console.log(`Syncing Discogs collection for user: ${username}`)
 
-  const releaseIds = await fetchCollectionReleaseIds()
+  try {
+    await discogsFetch(`${DISCOGS_API}/users/${username}`)
+    console.log('Discogs authentication OK')
+  } catch (error) {
+    throw new Error(`Discogs authentication failed for user "${username}". Check DISCOGS_TOKEN and DISCOGS_USERNAME secrets. ${error.message}`)
+  }
+
+  const collectionItems = await fetchCollectionItems()
   const records = []
+  let failedCount = 0
 
-  for (let i = 0; i < releaseIds.length; i += 1) {
-    const releaseId = releaseIds[i]
-    const record = await fetchReleaseDetails(releaseId)
-    records.push(record)
-    console.log(`Fetched release ${i + 1}/${releaseIds.length}: ${record.title}`)
+  for (let i = 0; i < collectionItems.length; i += 1) {
+    const releaseId = collectionItems[i].basic_information.id
+    const fallbackRecord = normalizeFromBasicInformation(collectionItems[i].basic_information)
 
-    if (i < releaseIds.length - 1) {
+    try {
+      const record = await fetchReleaseDetails(releaseId)
+      records.push(record)
+      console.log(`Fetched release ${i + 1}/${collectionItems.length}: ${record.title}`)
+    } catch (error) {
+      failedCount += 1
+      records.push(fallbackRecord)
+      console.warn(`Using basic info for release ${releaseId}: ${error.message}`)
+    }
+
+    if (i < collectionItems.length - 1) {
       await sleep(REQUEST_DELAY_MS)
     }
   }
@@ -122,6 +167,10 @@ async function main() {
   const outputPath = path.join(__dirname, '..', 'public', 'collection.json')
   fs.writeFileSync(outputPath, JSON.stringify(output, null, 2))
   console.log(`Wrote ${records.length} records to ${outputPath}`)
+
+  if (failedCount > 0) {
+    console.warn(`${failedCount} release(s) used basic information only (tracklist may be missing).`)
+  }
 }
 
 main().catch(error => {
