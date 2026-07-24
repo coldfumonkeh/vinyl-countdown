@@ -17,6 +17,8 @@ concurrency:
 jobs:
   sync-and-deploy:
     runs-on: ubuntu-latest
+    env:
+      NODE_OPTIONS: --openssl-legacy-provider
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
@@ -28,7 +30,7 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '22'
+          node-version: '18'
           cache: yarn
 
       - name: Install dependencies
