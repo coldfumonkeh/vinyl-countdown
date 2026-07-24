@@ -23,7 +23,8 @@ yarn sync
 
 - `yarn serve` — local dev server
 - `yarn build` — production build to `dist/` (includes SPA `404.html` for GitHub Pages)
-- `yarn sync` — fetch collection from Discogs into `public/collection.json`
+- `yarn sync` — fetch collection from Discogs into `public/collection.json` (fast metadata-only sync)
+- `SYNC_INCLUDE_TRACKLISTS=true yarn sync` — optional local-only sync that also fetches tracklists (slow for large collections)
 - `yarn check-secrets` — fail if suspicious secrets appear in tracked files
 
 ## Deployment

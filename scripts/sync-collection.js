@@ -5,11 +5,12 @@ const path = require('path')
 
 const DISCOGS_API = 'https://api.discogs.com'
 const USER_AGENT = 'VinylCountdown/1.0 +https://github.com/coldfumonkeh/vinyl-countdown'
-const REQUEST_DELAY_MS = 2000
-const MAX_RETRIES = 5
+const REQUEST_DELAY_MS = 1200
+const MAX_RETRIES = 3
 
 const token = (process.env.DISCOGS_TOKEN || '').trim()
 const username = (process.env.DISCOGS_USERNAME || 'coldfumonkeh').trim()
+const includeTracklists = process.env.SYNC_INCLUDE_TRACKLISTS === 'true'
 
 if (!token) {
   console.error('DISCOGS_TOKEN environment variable is required')
@@ -36,7 +37,7 @@ async function discogsFetch(url, attempt = 1) {
   }
 
   if (response.status >= 500 && attempt <= MAX_RETRIES) {
-    const backoff = attempt * 5
+    const backoff = attempt * 3
     console.warn(`Server error ${response.status}. Retrying in ${backoff}s...`)
     await sleep(backoff * 1000)
     return discogsFetch(url, attempt + 1)
@@ -72,18 +73,6 @@ async function fetchCollectionItems() {
   return items
 }
 
-function formatReleased(release) {
-  if (release.released) {
-    return release.released
-  }
-
-  if (release.year) {
-    return String(release.year)
-  }
-
-  return null
-}
-
 function normalizeFromBasicInformation(basic) {
   const artistsSort = (basic.artists || []).map(artist => artist.name).join(', ')
 
@@ -94,6 +83,7 @@ function normalizeFromBasicInformation(basic) {
     artists_sort: artistsSort,
     thumb: basic.thumb,
     genres: basic.genres || [],
+    styles: basic.styles || [],
     labels: basic.labels || [],
     tracklist: [],
     released_formatted: basic.year ? String(basic.year) : null,
@@ -101,31 +91,14 @@ function normalizeFromBasicInformation(basic) {
   }
 }
 
-function normalizeRelease(release) {
-  const artistsSort = release.artists_sort || (release.artists || []).map(a => a.name).join(', ')
-
-  return {
-    id: release.id,
-    title: release.title,
-    artists: release.artists || [],
-    artists_sort: artistsSort,
-    thumb: release.thumb,
-    genres: release.genres || [],
-    labels: release.labels || [],
-    tracklist: release.tracklist || [],
-    released_formatted: formatReleased(release),
-    searchText: `${release.title}${artistsSort}`.toLowerCase()
-  }
-}
-
-async function fetchReleaseDetails(releaseId) {
-  const url = `${DISCOGS_API}/releases/${releaseId}`
-  const release = await discogsFetch(url)
-  return normalizeRelease(release)
+async function fetchTracklist(releaseId) {
+  const release = await discogsFetch(`${DISCOGS_API}/releases/${releaseId}`)
+  return release.tracklist || []
 }
 
 async function main() {
   console.log(`Syncing Discogs collection for user: ${username}`)
+  console.log(`Mode: ${includeTracklists ? 'full (with tracklists)' : 'basic (collection metadata only)'}`)
 
   try {
     await discogsFetch(`${DISCOGS_API}/users/${username}`)
@@ -135,26 +108,28 @@ async function main() {
   }
 
   const collectionItems = await fetchCollectionItems()
-  const records = []
-  let failedCount = 0
+  const records = collectionItems.map(item => normalizeFromBasicInformation(item.basic_information))
 
-  for (let i = 0; i < collectionItems.length; i += 1) {
-    const releaseId = collectionItems[i].basic_information.id
-    const fallbackRecord = normalizeFromBasicInformation(collectionItems[i].basic_information)
+  if (includeTracklists) {
+    let enrichedCount = 0
 
-    try {
-      const record = await fetchReleaseDetails(releaseId)
-      records.push(record)
-      console.log(`Fetched release ${i + 1}/${collectionItems.length}: ${record.title}`)
-    } catch (error) {
-      failedCount += 1
-      records.push(fallbackRecord)
-      console.warn(`Using basic info for release ${releaseId}: ${error.message}`)
+    for (let i = 0; i < records.length; i += 1) {
+      try {
+        records[i].tracklist = await fetchTracklist(records[i].id)
+        enrichedCount += 1
+        console.log(`Fetched tracklist ${i + 1}/${records.length}: ${records[i].title}`)
+      } catch (error) {
+        console.warn(`Skipped tracklist for release ${records[i].id}: ${error.message}`)
+      }
+
+      if (i < records.length - 1) {
+        await sleep(REQUEST_DELAY_MS)
+      }
     }
 
-    if (i < collectionItems.length - 1) {
-      await sleep(REQUEST_DELAY_MS)
-    }
+    console.log(`Enriched ${enrichedCount}/${records.length} releases with tracklists`)
+  } else {
+    console.log(`Built ${records.length} records from collection metadata (no per-release API calls)`)
   }
 
   const output = {
@@ -167,10 +142,6 @@ async function main() {
   const outputPath = path.join(__dirname, '..', 'public', 'collection.json')
   fs.writeFileSync(outputPath, JSON.stringify(output, null, 2))
   console.log(`Wrote ${records.length} records to ${outputPath}`)
-
-  if (failedCount > 0) {
-    console.warn(`${failedCount} release(s) used basic information only (tracklist may be missing).`)
-  }
 }
 
 main().catch(error => {

@@ -29,12 +29,15 @@
               <p>{{ record.artists_sort }}</p>
               <p v-if="record.released_formatted"><small>Released: {{ record.released_formatted }}</small></p>
               <p v-if="record.labels && record.labels.length"><small>Label: {{ record.labels[0].name }} - {{ record.labels[0].catno }}</small></p>
-              <span v-for="(genre, index) in record.genres" :key="index">
+              <span v-for="(genre, index) in record.genres" :key="'genre-' + index">
                 <span class="badge rounded-pill bg-info text-dark">{{ genre }}</span>&nbsp;
+              </span>
+              <span v-for="(style, index) in record.styles" :key="'style-' + index">
+                <span class="badge rounded-pill bg-secondary">{{ style }}</span>&nbsp;
               </span>
             </td>
           </tr>
-          <tr>
+          <tr v-if="record.tracklist && record.tracklist.length">
             <td></td>
             <td>
               <ul class="list-group">
@@ -47,6 +50,14 @@
                   </li>
                 </span>
               </ul>
+            </td>
+          </tr>
+          <tr v-else>
+            <td></td>
+            <td>
+              <p class="text-muted mb-0">
+                <small>Track listing is available on Discogs.</small>
+              </p>
             </td>
           </tr>
         </table>
