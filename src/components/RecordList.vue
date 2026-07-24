@@ -4,12 +4,12 @@
       <div class="col">
         <div id="sort-bar" class="row gy-2 gx-3 align-items-center mt-4">
           <div class="col-auto">
-            <label class="visually-hidden" for="sortBy">Sort By</label>
+            <label class="visually-hidden" for="searchField">Search In</label>
             <select
               class="form-select"
-              id="sortBy"
-              name="sortBy"
-              v-model="sortBy"
+              id="searchField"
+              name="searchField"
+              v-model="searchField"
             >
               <option value="title">Release Title</option>
               <option value="artist">Artist Name</option>
@@ -33,7 +33,7 @@
                 type="text"
                 class="form-control"
                 v-model="searchValue"
-                placeholder="Search Records"
+                placeholder="Search records"
                 id="search-input"
               />
             </div>
@@ -111,7 +111,7 @@ export default {
   data() {
     return {
       ascending: true,
-      sortBy: 'title',
+      searchField: 'title',
       searchValue: '',
       records: [],
       loading: true,
@@ -144,13 +144,17 @@ export default {
 
       if (this.searchValue) {
         const query = this.searchValue.toLowerCase()
-        tempRecords = tempRecords.filter(item =>
-          item.searchText.includes(query)
-        )
+        tempRecords = tempRecords.filter(item => {
+          if (this.searchField === 'title') {
+            return item.title.toLowerCase().includes(query)
+          }
+
+          return item.artists_sort.toLowerCase().includes(query)
+        })
       }
 
       tempRecords = tempRecords.sort((a, b) => {
-        if (this.sortBy === 'title') {
+        if (this.searchField === 'title') {
           const fa = a.title.toLowerCase()
           const fb = b.title.toLowerCase()
           if (fa < fb) return -1
