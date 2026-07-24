@@ -65,7 +65,7 @@ jobs:
           if git diff --staged --quiet; then
             echo "No collection changes to commit"
           else
-            git commit -m "Sync collection from Discogs"
+            git commit -m "Sync collection from Discogs [skip ci]"
             git push
           fi
 
