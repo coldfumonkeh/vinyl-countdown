@@ -1,5 +1,5 @@
 {
-  "syncedAt": "2026-08-13T07:16:28.788Z",
+  "syncedAt": "2026-08-14T07:14:07.967Z",
   "username": "coldfumonkeh",
   "totalRecords": 434,
   "records": [
@@ -9128,7 +9128,7 @@
         }
       ],
       "artists_sort": "China Drum",
-      "thumb": "",
+      "thumb": "https://i.discogs.com/pAROkhL9AWE4ETYXKLbRmYh_demXNW61CbZcvzO0BOs/rs:fit/g:sm/q:40/h:150/w:150/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTM3NzM1/Nzk0LTE3ODY2Mjg4/MzktNjgyMi5qcGVn.jpeg",
       "genres": [
         "Rock"
       ],
@@ -15259,46 +15259,6 @@
       "searchText": "midnightstaylor swift"
     },
     {
-      "instanceId": 1512252973,
-      "id": 27604608,
-      "title": "Speak Now (Taylor's Version)",
-      "artists": [
-        {
-          "name": "Taylor Swift",
-          "anv": "",
-          "join": "",
-          "role": "",
-          "tracks": "",
-          "id": 1124645,
-          "resource_url": "https://api.discogs.com/artists/1124645"
-        }
-      ],
-      "artists_sort": "Taylor Swift",
-      "thumb": "https://i.discogs.com/VAKpayrwm2B6oUkNo9BgaGyfLvGIn8FEVtK5YC3IUT0/rs:fit/g:sm/q:40/h:150/w:150/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTI3NjA0/NjA4LTE2ODg5OTQ1/NzQtMjY3MC5qcGVn.jpeg",
-      "genres": [
-        "Pop",
-        "Folk, World, & Country"
-      ],
-      "styles": [
-        "Country",
-        "Alternative Rock",
-        "Vocal"
-      ],
-      "labels": [
-        {
-          "name": "Republic Records",
-          "catno": "2448438065",
-          "entity_type": "1",
-          "entity_type_name": "Label",
-          "id": 38017,
-          "resource_url": "https://api.discogs.com/labels/38017"
-        }
-      ],
-      "tracklist": [],
-      "released_formatted": "2023",
-      "searchText": "speak now (taylor's version)taylor swift"
-    },
-    {
       "instanceId": 1678629070,
       "id": 30444731,
       "title": "The Tortured Poets Department",
@@ -15776,6 +15736,54 @@
       "tracklist": [],
       "released_formatted": "2025",
       "searchText": "the life of a showgirltaylor swift"
+    },
+    {
+      "instanceId": 1512252973,
+      "id": 27604608,
+      "title": "Speak Now (Taylor's Version)",
+      "artists": [
+        {
+          "name": "Taylor Swift",
+          "anv": "",
+          "join": "",
+          "role": "",
+          "tracks": "",
+          "id": 1124645,
+          "resource_url": "https://api.discogs.com/artists/1124645"
+        }
+      ],
+      "artists_sort": "Taylor Swift",
+      "thumb": "https://i.discogs.com/VAKpayrwm2B6oUkNo9BgaGyfLvGIn8FEVtK5YC3IUT0/rs:fit/g:sm/q:40/h:150/w:150/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTI3NjA0/NjA4LTE2ODg5OTQ1/NzQtMjY3MC5qcGVn.jpeg",
+      "genres": [
+        "Pop",
+        "Folk, World, & Country"
+      ],
+      "styles": [
+        "Country",
+        "Alternative Rock",
+        "Vocal"
+      ],
+      "labels": [
+        {
+          "name": "Republic Records",
+          "catno": "2448438065",
+          "entity_type": "1",
+          "entity_type_name": "Label",
+          "id": 38017,
+          "resource_url": "https://api.discogs.com/labels/38017"
+        },
+        {
+          "name": "Republic Records",
+          "catno": "2448438034",
+          "entity_type": "1",
+          "entity_type_name": "Label",
+          "id": 38017,
+          "resource_url": "https://api.discogs.com/labels/38017"
+        }
+      ],
+      "tracklist": [],
+      "released_formatted": "2023",
+      "searchText": "speak now (taylor's version)taylor swift"
     },
     {
       "instanceId": 1517936800,
