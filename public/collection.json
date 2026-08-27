@@ -1,7 +1,7 @@
 {
-  "syncedAt": "2026-08-26T06:35:31.978Z",
+  "syncedAt": "2026-08-27T17:11:20.121Z",
   "username": "coldfumonkeh",
-  "totalRecords": 434,
+  "totalRecords": 436,
   "records": [
     {
       "instanceId": 901017472,
@@ -1987,6 +1987,44 @@
       "tracklist": [],
       "released_formatted": "2015",
       "searchText": "my generationthe who"
+    },
+    {
+      "instanceId": 2177764145,
+      "id": 37369512,
+      "title": "A Beautiful Lie",
+      "artists": [
+        {
+          "name": "30 Seconds To Mars",
+          "anv": "Thirty Seconds To Mars",
+          "join": "",
+          "role": "",
+          "tracks": "",
+          "id": 390829,
+          "resource_url": "https://api.discogs.com/artists/390829"
+        }
+      ],
+      "artists_sort": "30 Seconds To Mars",
+      "thumb": "https://i.discogs.com/bdW7EZ9uRR-wcuDT7CPVvWOIv8B1sGuVpmiEpsOfyIA/rs:fit/g:sm/q:40/h:150/w:150/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTM3MzY5/NTEyLTE3Nzk1ODEw/MTktMzE2MS5qcGVn.jpeg",
+      "genres": [
+        "Rock"
+      ],
+      "styles": [
+        "Alternative Rock",
+        "Emo"
+      ],
+      "labels": [
+        {
+          "name": "Capitol Records",
+          "catno": "00602478432651",
+          "entity_type": "1",
+          "entity_type_name": "Label",
+          "id": 654,
+          "resource_url": "https://api.discogs.com/labels/654"
+        }
+      ],
+      "tracklist": [],
+      "released_formatted": "2026",
+      "searchText": "a beautiful lie30 seconds to mars"
     },
     {
       "instanceId": 2093207620,
@@ -10490,52 +10528,6 @@
       "searchText": "back to the eggwings (2)"
     },
     {
-      "instanceId": 901014886,
-      "id": 2935158,
-      "title": "Press To Play",
-      "artists": [
-        {
-          "name": "Paul McCartney",
-          "anv": "",
-          "join": "",
-          "role": "",
-          "tracks": "",
-          "id": 35301,
-          "resource_url": "https://api.discogs.com/artists/35301"
-        }
-      ],
-      "artists_sort": "Paul McCartney",
-      "thumb": "https://i.discogs.com/ll9hWUAHSFmORGxqToBKYMJAIyzTHnxSUhPDl8KJ3nc/rs:fit/g:sm/q:40/h:150/w:150/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTI5MzUx/NTgtMTQ2OTAyNTU5/MS04NDU0LmpwZWc.jpeg",
-      "genres": [
-        "Rock",
-        "Pop"
-      ],
-      "styles": [
-        "Pop Rock"
-      ],
-      "labels": [
-        {
-          "name": "MPL (2)",
-          "catno": "PCSD 103",
-          "entity_type": "1",
-          "entity_type_name": "Label",
-          "id": 89392,
-          "resource_url": "https://api.discogs.com/labels/89392"
-        },
-        {
-          "name": "Parlophone",
-          "catno": "PCSD 103",
-          "entity_type": "1",
-          "entity_type_name": "Label",
-          "id": 2294,
-          "resource_url": "https://api.discogs.com/labels/2294"
-        }
-      ],
-      "tracklist": [],
-      "released_formatted": "1986",
-      "searchText": "press to playpaul mccartney"
-    },
-    {
       "instanceId": 958441372,
       "id": 1397648,
       "title": "Music Of Mystery, Mayhem And Murder",
@@ -11526,6 +11518,44 @@
       "tracklist": [],
       "released_formatted": null,
       "searchText": "a collection of beatles oldies the beatles"
+    },
+    {
+      "instanceId": 901014886,
+      "id": 2935158,
+      "title": "Press To Play",
+      "artists": [
+        {
+          "name": "Paul McCartney",
+          "anv": "",
+          "join": "",
+          "role": "",
+          "tracks": "",
+          "id": 35301,
+          "resource_url": "https://api.discogs.com/artists/35301"
+        }
+      ],
+      "artists_sort": "Paul McCartney",
+      "thumb": "https://i.discogs.com/ll9hWUAHSFmORGxqToBKYMJAIyzTHnxSUhPDl8KJ3nc/rs:fit/g:sm/q:40/h:150/w:150/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTI5MzUx/NTgtMTQ2OTAyNTU5/MS04NDU0LmpwZWc.jpeg",
+      "genres": [
+        "Rock",
+        "Pop"
+      ],
+      "styles": [
+        "Pop Rock"
+      ],
+      "labels": [
+        {
+          "name": "Parlophone",
+          "catno": "PCSD 103",
+          "entity_type": "1",
+          "entity_type_name": "Label",
+          "id": 2294,
+          "resource_url": "https://api.discogs.com/labels/2294"
+        }
+      ],
+      "tracklist": [],
+      "released_formatted": "1986",
+      "searchText": "press to playpaul mccartney"
     },
     {
       "instanceId": 901014877,
@@ -18221,6 +18251,51 @@
       "tracklist": [],
       "released_formatted": "1987",
       "searchText": "tango in the nightfleetwood mac"
+    },
+    {
+      "instanceId": 2177765369,
+      "id": 33671766,
+      "title": "Glitterbug",
+      "artists": [
+        {
+          "name": "The Wombats",
+          "anv": "",
+          "join": "",
+          "role": "",
+          "tracks": "",
+          "id": 793943,
+          "resource_url": "https://api.discogs.com/artists/793943"
+        }
+      ],
+      "artists_sort": "The Wombats",
+      "thumb": "https://i.discogs.com/c8aLf8cvbUVVI9LQBdUG1dOAMRs4g7udDXayziOmWCQ/rs:fit/g:sm/q:40/h:150/w:150/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTMzNjcx/NzY2LTE3NDQ0MzA0/NDUtODMyNS5qcGVn.jpeg",
+      "genres": [
+        "Rock"
+      ],
+      "styles": [
+        "Indie Rock"
+      ],
+      "labels": [
+        {
+          "name": "Warner Records",
+          "catno": "5021732533672",
+          "entity_type": "1",
+          "entity_type_name": "Label",
+          "id": 134882,
+          "resource_url": "https://api.discogs.com/labels/134882"
+        },
+        {
+          "name": "14th Floor Records",
+          "catno": "5021732533672",
+          "entity_type": "1",
+          "entity_type_name": "Label",
+          "id": 20418,
+          "resource_url": "https://api.discogs.com/labels/20418"
+        }
+      ],
+      "tracklist": [],
+      "released_formatted": "2025",
+      "searchText": "glitterbugthe wombats"
     },
     {
       "instanceId": 901015603,
