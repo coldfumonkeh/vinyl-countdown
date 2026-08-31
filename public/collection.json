@@ -1,5 +1,5 @@
 {
-  "syncedAt": "2026-08-30T10:59:51.408Z",
+  "syncedAt": "2026-08-31T12:20:37.673Z",
   "username": "coldfumonkeh",
   "totalRecords": 436,
   "records": [
@@ -14137,61 +14137,6 @@
       "searchText": "blue hawaiielvis presley"
     },
     {
-      "instanceId": 901020712,
-      "id": 216167,
-      "title": "Lodger",
-      "artists": [
-        {
-          "name": "David Bowie",
-          "anv": "",
-          "join": "",
-          "role": "",
-          "tracks": "",
-          "id": 10263,
-          "resource_url": "https://api.discogs.com/artists/10263"
-        }
-      ],
-      "artists_sort": "David Bowie",
-      "thumb": "https://i.discogs.com/PmSM1WakRu6JhGM06r0uWbZrXYBSQKbWS822bkwPqAU/rs:fit/g:sm/q:40/h:150/w:150/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTIxNjE2/Ny0xMzQ4NDIzMzYy/LTEwNDcuanBlZw.jpeg",
-      "genres": [
-        "Rock"
-      ],
-      "styles": [
-        "Art Rock",
-        "Avantgarde",
-        "Experimental"
-      ],
-      "labels": [
-        {
-          "name": "RCA Victor",
-          "catno": "BOW LP 1",
-          "entity_type": "1",
-          "entity_type_name": "Label",
-          "id": 11358,
-          "resource_url": "https://api.discogs.com/labels/11358"
-        },
-        {
-          "name": "RCA Victor",
-          "catno": "PL 13254",
-          "entity_type": "1",
-          "entity_type_name": "Label",
-          "id": 11358,
-          "resource_url": "https://api.discogs.com/labels/11358"
-        },
-        {
-          "name": "RCA Victor",
-          "catno": "AQL1 3254",
-          "entity_type": "1",
-          "entity_type_name": "Label",
-          "id": 11358,
-          "resource_url": "https://api.discogs.com/labels/11358"
-        }
-      ],
-      "tracklist": [],
-      "released_formatted": "1979",
-      "searchText": "lodgerdavid bowie"
-    },
-    {
       "instanceId": 901015609,
       "id": 11933466,
       "title": "Sunday Morning Classics",
@@ -14293,6 +14238,69 @@
       "tracklist": [],
       "released_formatted": "1986",
       "searchText": "revengeeurythmics"
+    },
+    {
+      "instanceId": 901020712,
+      "id": 216167,
+      "title": "Lodger",
+      "artists": [
+        {
+          "name": "David Bowie",
+          "anv": "",
+          "join": "",
+          "role": "",
+          "tracks": "",
+          "id": 10263,
+          "resource_url": "https://api.discogs.com/artists/10263"
+        }
+      ],
+      "artists_sort": "David Bowie",
+      "thumb": "https://i.discogs.com/PmSM1WakRu6JhGM06r0uWbZrXYBSQKbWS822bkwPqAU/rs:fit/g:sm/q:40/h:150/w:150/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTIxNjE2/Ny0xMzQ4NDIzMzYy/LTEwNDcuanBlZw.jpeg",
+      "genres": [
+        "Rock"
+      ],
+      "styles": [
+        "Art Rock",
+        "Avantgarde",
+        "Experimental"
+      ],
+      "labels": [
+        {
+          "name": "RCA",
+          "catno": "BOW LP 1",
+          "entity_type": "1",
+          "entity_type_name": "Label",
+          "id": 895,
+          "resource_url": "https://api.discogs.com/labels/895"
+        },
+        {
+          "name": "RCA Victor",
+          "catno": "BOW LP 1",
+          "entity_type": "1",
+          "entity_type_name": "Label",
+          "id": 11358,
+          "resource_url": "https://api.discogs.com/labels/11358"
+        },
+        {
+          "name": "RCA Victor",
+          "catno": "PL 13254",
+          "entity_type": "1",
+          "entity_type_name": "Label",
+          "id": 11358,
+          "resource_url": "https://api.discogs.com/labels/11358"
+        },
+        {
+          "name": "RCA Victor",
+          "catno": "AQL1 3254",
+          "entity_type": "1",
+          "entity_type_name": "Label",
+          "id": 11358,
+          "resource_url": "https://api.discogs.com/labels/11358"
+        }
+      ],
+      "tracklist": [],
+      "released_formatted": "1979",
+      "searchText": "lodgerdavid bowie"
     },
     {
       "instanceId": 1512252211,
