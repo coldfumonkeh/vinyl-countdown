@@ -1,5 +1,5 @@
 {
-  "syncedAt": "2026-09-05T09:45:46.888Z",
+  "syncedAt": "2026-09-06T10:01:55.895Z",
   "username": "coldfumonkeh",
   "totalRecords": 436,
   "records": [
@@ -8788,7 +8788,7 @@
         }
       ],
       "artists_sort": "The Streets",
-      "thumb": "https://i.discogs.com/Z-iGXhvwx8DPgOxSrwmF376MBBZ2wOdjNFqNXopq6Ds/rs:fit/g:sm/q:40/h:150/w:150/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTM3Njgy/NzIxLTE3ODIwMzQ5/NTUtNzc0NS5qcGVn.jpeg",
+      "thumb": "https://i.discogs.com/JhJLl6zjQR50wCwMmZEfLmdYTeco0lYXe9sz7ZCLyww/rs:fit/g:sm/q:40/h:150/w:150/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTM3Njgy/NzIxLTE3ODg2MDc3/NzUtMTUyMS5qcGVn.jpeg",
       "genres": [
         "Electronic"
       ],
@@ -9249,7 +9249,8 @@
         "Stage & Screen"
       ],
       "styles": [
-        "Synth-pop"
+        "Synth-pop",
+        "Theme"
       ],
       "labels": [
         {
