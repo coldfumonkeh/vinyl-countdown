@@ -1,7 +1,7 @@
 {
-  "syncedAt": "2026-10-04T11:37:05.410Z",
+  "syncedAt": "2026-10-05T13:14:03.611Z",
   "username": "coldfumonkeh",
-  "totalRecords": 436,
+  "totalRecords": 439,
   "records": [
     {
       "instanceId": 901017472,
@@ -1212,6 +1212,44 @@
       "tracklist": [],
       "released_formatted": "2014",
       "searchText": "hotel californiaeagles"
+    },
+    {
+      "instanceId": 2191068635,
+      "id": 1853563,
+      "title": "Empty Glass",
+      "artists": [
+        {
+          "name": "Pete Townshend",
+          "anv": "",
+          "join": "",
+          "role": "",
+          "tracks": "",
+          "id": 256053,
+          "resource_url": "https://api.discogs.com/artists/256053"
+        }
+      ],
+      "artists_sort": "Pete Townshend",
+      "thumb": "https://i.discogs.com/IC-kKS2gQQxx8bTFX0MdpFM7KqCQhJRA4rGLAjoU7So/rs:fit/g:sm/q:40/h:150/w:150/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTE4NTM1/NjMtMTMxNTM5MDA4/Ni5qcGVn.jpeg",
+      "genres": [
+        "Rock"
+      ],
+      "styles": [
+        "Rock & Roll",
+        "Classic Rock"
+      ],
+      "labels": [
+        {
+          "name": "ATCO Records",
+          "catno": "XSD 32-100",
+          "entity_type": "1",
+          "entity_type_name": "Label",
+          "id": 3820,
+          "resource_url": "https://api.discogs.com/labels/3820"
+        }
+      ],
+      "tracklist": [],
+      "released_formatted": "1980",
+      "searchText": "empty glasspete townshend"
     },
     {
       "instanceId": 1430915190,
@@ -9267,6 +9305,44 @@
       "searchText": "crockett's themejan hammer"
     },
     {
+      "instanceId": 2191068919,
+      "id": 9241974,
+      "title": "Who's Next",
+      "artists": [
+        {
+          "name": "The Who",
+          "anv": "",
+          "join": "",
+          "role": "",
+          "tracks": "",
+          "id": 196766,
+          "resource_url": "https://api.discogs.com/artists/196766"
+        }
+      ],
+      "artists_sort": "The Who",
+      "thumb": "https://i.discogs.com/QFVhbmTmdQd3y2oVp-HVrY7K3a43E0bM81n_Cle6tTA/rs:fit/g:sm/q:40/h:150/w:150/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTkyNDE5/NzQtMTQ3NzIyODU4/MS04MjkxLmpwZWc.jpeg",
+      "genres": [
+        "Rock"
+      ],
+      "styles": [
+        "Hard Rock",
+        "Classic Rock"
+      ],
+      "labels": [
+        {
+          "name": "MCA Records",
+          "catno": "MCA-2023",
+          "entity_type": "1",
+          "entity_type_name": "Label",
+          "id": 878,
+          "resource_url": "https://api.discogs.com/labels/878"
+        }
+      ],
+      "tracklist": [],
+      "released_formatted": "1973",
+      "searchText": "who's nextthe who"
+    },
+    {
       "instanceId": 901020310,
       "id": 3943526,
       "title": "Miami Vice II (New Music From The Television Series, \"Miami Vice\")",
@@ -10499,7 +10575,7 @@
         }
       ],
       "artists_sort": "Wings (2)",
-      "thumb": "https://i.discogs.com/bVU-9M5tpaTBMIOTzlLbe6ZjTNkqVAes-CTllcn_wK8/rs:fit/g:sm/q:40/h:150/w:150/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTM3OTY2/MTEtMTQwNDI3NzU5/NS01OTE0LmpwZWc.jpeg",
+      "thumb": "https://i.discogs.com/Ex1svYMCvuwLotDhhCmkkoqHAtPL3MO-tgsIk2FvXVM/rs:fit/g:sm/q:40/h:150/w:150/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTM3OTY2/MTEtMTc5MTE1ODEz/Ni00MzA1LmpwZWc.jpeg",
       "genres": [
         "Rock"
       ],
@@ -11671,6 +11747,132 @@
       "tracklist": [],
       "released_formatted": "1963",
       "searchText": "she loves youthe beatles"
+    },
+    {
+      "instanceId": 2191069192,
+      "id": 38081163,
+      "title": "Rubber Soul",
+      "artists": [
+        {
+          "name": "The Beatles",
+          "anv": "",
+          "join": "",
+          "role": "",
+          "tracks": "",
+          "id": 82730,
+          "resource_url": "https://api.discogs.com/artists/82730"
+        }
+      ],
+      "artists_sort": "The Beatles",
+      "thumb": "https://i.discogs.com/CCg87RvLedp8_fT3SbJVyFeEfv3dTlm4PT4O22g0vj4/rs:fit/g:sm/q:40/h:150/w:150/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTM4MDgx/MTYzLTE3OTExNDA3/ODEtNTczNy5qcGVn.jpeg",
+      "genres": [
+        "Rock",
+        "Pop"
+      ],
+      "styles": [
+        "Pop Rock"
+      ],
+      "labels": [
+        {
+          "name": "Parlophone",
+          "catno": "657 2334",
+          "entity_type": "1",
+          "entity_type_name": "Label",
+          "id": 2294,
+          "resource_url": "https://api.discogs.com/labels/2294"
+        },
+        {
+          "name": "Apple Records",
+          "catno": "657 2334",
+          "entity_type": "1",
+          "entity_type_name": "Label",
+          "id": 25693,
+          "resource_url": "https://api.discogs.com/labels/25693"
+        },
+        {
+          "name": "Universal Music Group International",
+          "catno": "657 2334",
+          "entity_type": "1",
+          "entity_type_name": "Label",
+          "id": 138199,
+          "resource_url": "https://api.discogs.com/labels/138199"
+        },
+        {
+          "name": "UMe",
+          "catno": "657 2334",
+          "entity_type": "1",
+          "entity_type_name": "Label",
+          "id": 68029,
+          "resource_url": "https://api.discogs.com/labels/68029"
+        },
+        {
+          "name": "Parlophone",
+          "catno": "0199957217682",
+          "entity_type": "1",
+          "entity_type_name": "Label",
+          "id": 2294,
+          "resource_url": "https://api.discogs.com/labels/2294"
+        },
+        {
+          "name": "Apple Records",
+          "catno": "0199957217682",
+          "entity_type": "1",
+          "entity_type_name": "Label",
+          "id": 25693,
+          "resource_url": "https://api.discogs.com/labels/25693"
+        },
+        {
+          "name": "Universal Music Group International",
+          "catno": "0199957217682",
+          "entity_type": "1",
+          "entity_type_name": "Label",
+          "id": 138199,
+          "resource_url": "https://api.discogs.com/labels/138199"
+        },
+        {
+          "name": "UMe",
+          "catno": "0199957217682",
+          "entity_type": "1",
+          "entity_type_name": "Label",
+          "id": 68029,
+          "resource_url": "https://api.discogs.com/labels/68029"
+        },
+        {
+          "name": "Parlophone",
+          "catno": "00199957217682",
+          "entity_type": "1",
+          "entity_type_name": "Label",
+          "id": 2294,
+          "resource_url": "https://api.discogs.com/labels/2294"
+        },
+        {
+          "name": "Apple Records",
+          "catno": "00199957217682",
+          "entity_type": "1",
+          "entity_type_name": "Label",
+          "id": 25693,
+          "resource_url": "https://api.discogs.com/labels/25693"
+        },
+        {
+          "name": "Universal Music Group International",
+          "catno": "00199957217682",
+          "entity_type": "1",
+          "entity_type_name": "Label",
+          "id": 138199,
+          "resource_url": "https://api.discogs.com/labels/138199"
+        },
+        {
+          "name": "UMe",
+          "catno": "00199957217682",
+          "entity_type": "1",
+          "entity_type_name": "Label",
+          "id": 68029,
+          "resource_url": "https://api.discogs.com/labels/68029"
+        }
+      ],
+      "tracklist": [],
+      "released_formatted": "2026",
+      "searchText": "rubber soulthe beatles"
     },
     {
       "instanceId": 901017202,
