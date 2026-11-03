@@ -1,5 +1,5 @@
 {
-  "syncedAt": "2026-11-02T14:25:08.518Z",
+  "syncedAt": "2026-11-03T13:24:06.359Z",
   "username": "coldfumonkeh",
   "totalRecords": 439,
   "records": [
@@ -11356,11 +11356,11 @@
     {
       "instanceId": 1223035762,
       "id": 4027298,
-      "title": "Ticket To Ride",
+      "title": "涙の乗車券 (チケット・トゥ・ライド) = Ticket To Ride",
       "artists": [
         {
           "name": "The Beatles",
-          "anv": "",
+          "anv": "ビートルズ",
           "join": "",
           "role": "",
           "tracks": "",
@@ -11390,7 +11390,7 @@
       ],
       "tracklist": [],
       "released_formatted": "1965",
-      "searchText": "ticket to ridethe beatles"
+      "searchText": "涙の乗車券 (チケット・トゥ・ライド) = ticket to ridethe beatles"
     },
     {
       "instanceId": 901016632,
