@@ -1,5 +1,5 @@
 {
-  "syncedAt": "2026-11-14T12:48:02.869Z",
+  "syncedAt": "2026-11-15T13:15:31.902Z",
   "username": "coldfumonkeh",
   "totalRecords": 439,
   "records": [
@@ -16640,7 +16640,9 @@
         "Classical"
       ],
       "styles": [
-        "Baroque"
+        "Baroque",
+        "Suite",
+        "Orchestra"
       ],
       "labels": [
         {
